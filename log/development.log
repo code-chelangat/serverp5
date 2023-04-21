@@ -355,3 +355,95 @@ Processing by OrdersController#show_invoice as */*
 Completed 200 OK in 268ms (Views: 34.6ms | ActiveRecord: 140.6ms | Allocations: 17694)
 
 
+Started GET "/addresses" for ::1 at 2023-04-21 13:23:58 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::StatementInvalid (PG::InsufficientPrivilege: ERROR:  permission denied for table schema_migrations
+):
+  
+activerecord (7.0.4.3) lib/active_record/connection_adapters/postgresql_adapter.rb:768:in `exec_params'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/postgresql_adapter.rb:768:in `block (2 levels) in exec_no_cache'
+activesupport (7.0.4.3) lib/active_support/concurrency/share_lock.rb:187:in `yield_shares'
+activesupport (7.0.4.3) lib/active_support/dependencies/interlock.rb:41:in `permit_concurrent_loads'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/postgresql_adapter.rb:767:in `block in exec_no_cache'
+activesupport (7.0.4.3) lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `handle_interrupt'
+activesupport (7.0.4.3) lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `block in synchronize'
+activesupport (7.0.4.3) lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `handle_interrupt'
+activesupport (7.0.4.3) lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `synchronize'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/abstract_adapter.rb:765:in `block in log'
+activesupport (7.0.4.3) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/abstract_adapter.rb:756:in `log'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/postgresql_adapter.rb:766:in `exec_no_cache'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/postgresql_adapter.rb:745:in `execute_and_clear'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/postgresql/database_statements.rb:54:in `exec_query'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/abstract/database_statements.rb:560:in `select'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/abstract/database_statements.rb:66:in `select_all'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/abstract/query_cache.rb:107:in `block in select_all'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/abstract/query_cache.rb:137:in `block in cache_sql'
+activesupport (7.0.4.3) lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `handle_interrupt'
+activesupport (7.0.4.3) lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `block in synchronize'
+activesupport (7.0.4.3) lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `handle_interrupt'
+activesupport (7.0.4.3) lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `synchronize'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/abstract/query_cache.rb:128:in `cache_sql'
+activerecord (7.0.4.3) lib/active_record/connection_adapters/abstract/query_cache.rb:107:in `select_all'
+activerecord (7.0.4.3) lib/active_record/relation/calculations.rb:209:in `block in pluck'
+activerecord (7.0.4.3) lib/active_record/relation.rb:962:in `skip_query_cache_if_necessary'
+activerecord (7.0.4.3) lib/active_record/relation/calculations.rb:205:in `pluck'
+activerecord (7.0.4.3) lib/active_record/schema_migration.rb:42:in `all_versions'
+activerecord (7.0.4.3) lib/active_record/migration.rb:1140:in `get_all_versions'
+activerecord (7.0.4.3) lib/active_record/migration.rb:1156:in `pending_migration_versions'
+activerecord (7.0.4.3) lib/active_record/migration.rb:1152:in `needs_migration?'
+activerecord (7.0.4.3) lib/active_record/migration.rb:627:in `check_pending!'
+activerecord (7.0.4.3) lib/active_record/migration.rb:592:in `block (2 levels) in call'
+activesupport (7.0.4.3) lib/active_support/file_update_checker.rb:83:in `execute'
+activerecord (7.0.4.3) lib/active_record/migration.rb:597:in `block in call'
+activerecord (7.0.4.3) lib/active_record/migration.rb:589:in `synchronize'
+activerecord (7.0.4.3) lib/active_record/migration.rb:589:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4.3) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.6.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.6.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+rack-cors (2.0.1) lib/rack/cors.rb:102:in `call'
+railties (7.0.4.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/addresses" for ::1 at 2023-04-21 13:26:18 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AddressesController#index as */*
+  Parameters: {"email"=>"admin@example.com", "password"=>"[FILTERED]", "address"=>{}}
+  [1m[36mAddress Load (1.4ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  ↳ app/controllers/addresses_controller.rb:3:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/addresses_controller.rb:3:in `index'
+[active_model_serializers]   [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/addresses_controller.rb:3:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/addresses_controller.rb:3:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (37.67ms)
+Completed 200 OK in 116ms (Views: 58.1ms | ActiveRecord: 14.6ms | Allocations: 68957)
+
+
