@@ -22,6 +22,8 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem 'bcrypt', '~> 3.1', '>= 3.1.12'
  gem 'jwt', '~> 1.5', '>= 1.5.4'
  gem 'active_model_serializers'
+ gem 'image_processing', '~> 1.12', '>= 1.12.2'
+ 
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -31,5 +33,10 @@ end
 group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+  
 end
 
+
+gem "activestorage", "~> 7.0"
+
+gem "cloudinary", "~> 1.25"
