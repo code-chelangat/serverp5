@@ -33806,3 +33806,69 @@ Processing by AuthenticationController#authenticate as */*
 Completed 200 OK in 274ms (Views: 22.3ms | ActiveRecord: 11.4ms | Allocations: 21665)
 
 
+Started POST "/authenticate" for ::1 at 2023-04-25 10:15:47 +0300
+Processing by AuthenticationController#authenticate as */*
+  Parameters: {"email"=>"steve@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"steve@gmail.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :authentication. Context: { controller: AuthenticationController, action: authenticate, request: #<ActionDispatch::Request:0x00007fb138a03a98>, params: {"email"=>"steve@gmail.com", "password"=>"[FILTERED]", "controller"=>"authentication", "action"=>"authenticate", "authentication"=>{"email"=>"steve@gmail.com", "password"=>"[FILTERED]"}} }[0m
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "steve@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:5:in `authenticate'
+[31mUnpermitted parameter: :authentication. Context: { controller: AuthenticationController, action: authenticate, request: #<ActionDispatch::Request:0x00007fb138a03a98>, params: {"email"=>"steve@gmail.com", "password"=>"[FILTERED]", "controller"=>"authentication", "action"=>"authenticate", "authentication"=>{"email"=>"steve@gmail.com", "password"=>"[FILTERED]"}} }[0m
+  [1m[36mAdmin Load (0.5ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."email" = $1 LIMIT $2[0m  [["email", "steve@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6:in `authenticate'
+[31mUnpermitted parameter: :authentication. Context: { controller: AuthenticationController, action: authenticate, request: #<ActionDispatch::Request:0x00007fb138a03a98>, params: {"email"=>"steve@gmail.com", "password"=>"[FILTERED]", "controller"=>"authentication", "action"=>"authenticate", "authentication"=>{"email"=>"steve@gmail.com", "password"=>"[FILTERED]"}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.31ms)
+Completed 200 OK in 235ms (Views: 0.7ms | ActiveRecord: 11.2ms | Allocations: 4544)
+
+
+Started GET "/orders" for 127.0.0.1 at 2023-04-25 10:18:35 +0300
+Processing by OrdersController#index as */*
+  [1m[36mOrder Load (1.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/controllers/orders_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/orders_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/orders_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/orders_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/orders_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/orders_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/orders_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Product"], ["name", "products_image"], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/models/product.rb:16:in `get_image_url'
+[active_model_serializers]   [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Product"], ["name", "products_image"], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/models/product.rb:16:in `get_image_url'
+[active_model_serializers]   [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Product"], ["name", "products_image"], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/models/product.rb:16:in `get_image_url'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (21.7ms)
+Completed 200 OK in 54ms (Views: 35.7ms | ActiveRecord: 7.9ms | Allocations: 42813)
+
+
+Started GET "/orders" for 127.0.0.1 at 2023-04-25 10:18:35 +0300
+Processing by OrdersController#index as */*
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/controllers/orders_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/orders_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/orders_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/orders_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/orders_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/orders_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/orders_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Product"], ["name", "products_image"], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/models/product.rb:16:in `get_image_url'
+[active_model_serializers]   [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Product"], ["name", "products_image"], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/models/product.rb:16:in `get_image_url'
+[active_model_serializers]   [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Product"], ["name", "products_image"], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/models/product.rb:16:in `get_image_url'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (19.6ms)
+Completed 200 OK in 22ms (Views: 20.5ms | ActiveRecord: 1.2ms | Allocations: 9970)
+
+
