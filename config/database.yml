@@ -22,10 +22,10 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 development:
   adapter: postgresql
-  # encoding: unicode
+  encoding: unicode
   database: one_stop_development
-  # username: postgres
-  # password: AUGUST19
+  username: postgres
+  password: AUGUST19
   host: localhost
   port: 5432
   # The specified database role being used to connect to postgres.
@@ -69,17 +69,14 @@ test:
 # the values provided in this file. Alternatively, you can specify a connection
 # URL environment variable explicitly:
 #
-#   production:
-#     url: <%= ENV["MY_APP_DATABASE_URL"] %>
+  # production:
+  #   url: <%= ENV["MY_APP_DATABASE_URL"] %>
 #
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
 #
-# production:
-#   <<: *default
-#   database: one_stop_production
-#   username: one_stop
-#   password: <%= ENV["ONE_STOP_DATABASE_PASSWORD"] %>
 production:
   <<: *default
-  url: <%= ENV['DATABASE_URL'] %>
+  database: one_stop_production
+  username: one_stop
+  password: <%= ENV["ONE_STOP_DATABASE_PASSWORD"] %>
